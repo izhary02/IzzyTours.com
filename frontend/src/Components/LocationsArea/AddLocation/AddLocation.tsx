@@ -6,12 +6,26 @@ import notifyService from "../../../Services/NotifyService";
 import "./AddLocation.css";
 import {TextField, Button, InputAdornment, IconButton} from '@mui/material'
 import {PhotoCamera,Send} from '@mui/icons-material';
+import { useEffect, useState } from "react";
+import store from "../../../Redux/Store";
 
 
 
 function AddLocation(): JSX.Element {
     const navigate = useNavigate();
     const { register, handleSubmit, formState } = useForm<LocationsModel>();
+
+
+    const [token, setToken] = useState<string>()
+    const getUserToken = store.getState().authState.token;
+
+
+
+useEffect(()=>{
+    const getUserToken = store.getState().authState.token;
+    setToken(getUserToken)
+    console.log({token});
+     },);
    
     async function send(location: LocationsModel) {
         try {
@@ -24,6 +38,8 @@ function AddLocation(): JSX.Element {
             notifyService.error(err);
         }
     }
+
+
 
     return (
 <div className="AddLocation FirstBox">	

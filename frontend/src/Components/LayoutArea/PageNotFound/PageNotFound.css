@@ -25,7 +25,7 @@
     background-color: rgb(248, 227, 227);
     display:inline-flex;
 } 
-.PageNotFound > .ButtonAndText >p{
+.PageNotFound > .ButtonAndText >sup{
     box-sizing: border-box;
     font-size: clamp(0.8rem, 3vw, 1.5rem);
     width: 73%;

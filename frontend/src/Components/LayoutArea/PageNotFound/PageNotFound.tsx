@@ -16,7 +16,7 @@ function PageNotFound(): JSX.Element {
 			<img src={NotFound} alt="404" />
             <div className="ButtonAndText">
                 
-            <p> Go bake to the </p>
+            <sup> Go bake to the </sup>
         <Breadcrumbs aria-label="breadcrumb" className="HomepageButton" onClick={handleLocations}>
         <Link
           className="ButtonLink"
