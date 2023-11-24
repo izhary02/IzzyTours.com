@@ -1,0 +1,58 @@
+.Menu{
+   align-items: center;
+   display:inline-flex;
+   gap: 40px ; 
+   font-size:small;
+   text-align: center; 
+}  
+
+.Menu .LocationsButton{ 
+    background-color:#141471;
+    border-radius: 6px;
+    width: 120px;
+    height: 40px;
+    box-shadow: 0 0 3px 0px rgb(12, 0, 0);  
+}  
+
+.Menu .LocationsButton .ButtonLink {
+   padding: 7px;
+   font: sans-serif;
+}
+
+.Menu .AddButton{  
+   background-color:#141471
+   ;
+   border-radius: 6px;
+   width: 80px;
+   height: 40px;
+   box-shadow: 0 0 3px 0px rgb(12, 0, 0); 
+}  
+
+.Menu .AddButton .ButtonLink{
+   padding: 11px;
+   font: sans-serif;
+}
+
+.Menu .StatisticsButton{
+   background-color:#141471;
+   border-radius: 6px;
+   width: 115px;
+   height: 40px;
+   box-shadow: 0 0 3px 0px rgb(12, 0, 0);
+   background-blend-mode: multiply;   
+}  
+
+.Menu .StatisticsButton .ButtonLink{
+   padding: 9px;
+   font: sans-serif;
+}
+
+.Menu .marked{  
+   background-color:#0022e6
+   ;  border-radius: 6px;
+   box-shadow: 0 0 3px 0px rgb(12, 0, 0); 
+} 
+
+.invisible{
+   visibility: hidden;  
+}

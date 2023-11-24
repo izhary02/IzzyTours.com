@@ -1,0 +1,79 @@
+.LocationsCard {
+    width: 300px;
+    display: inline-flex;
+    align-items: center;
+    background-image: linear-gradient(190deg, rgb(197, 195, 197)); 
+}
+.Container {
+    text-align: center;
+    color: rgb(138, 18, 18);
+    height: 380px; 
+    border: 1px solid rgb(176, 174, 174);
+  }
+.LocationsCard img{
+    width: 100%;
+    height: 200px;
+}
+
+.LocationsCard >div:last-child{
+    margin-left: auto;
+   font-size: medium;
+}
+
+.Bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+.Country{
+    text-align: center;
+    font-family: 'Source Serif Pro', serif;
+    font-size:xx-large;  
+}
+.Info{ 
+    font-family: 'Source Serif Pro', serif;
+    font-size:x-large;  
+}
+.TheInfo{ 
+    font-size:large;  
+}
+.Price{
+    font-family: 'Source Serif Pro', serif;
+    font-size:large;
+    text-align:right;  
+}
+.ThePrice{
+    font-size:small;
+    text-align:right;  
+}
+.TheDate{
+    font-size:small;
+    text-align:right; 
+}
+.Dates{
+    position: relative;
+    text-align: center;
+    font-family: 'Source Serif Pro', serif;
+    font-size:x-large;  
+}
+
+.hide {
+    display: none;
+}
+
+
+.LocationsCard p{
+    font-size: 14px;
+}
+a{
+    color: rgb(68, 91, 125);
+    text-decoration: none;
+  }
+  .followButton{
+      position: absolute;
+    left: 246px;
+    bottom: 325px;
+    height: 60px;
+    display: inline-flex;  
+  }
+  

@@ -1,0 +1,11 @@
+.Header {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.Header >h2{
+    margin: 42px;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 40px;
+}

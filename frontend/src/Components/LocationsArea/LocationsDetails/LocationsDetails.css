@@ -1,0 +1,93 @@
+.LocationsDetails {
+    height: 100%;
+    box-sizing: border-box;
+}
+.CardLocationDetails{
+    box-sizing: border-box;
+    margin: 30px;
+    width: 650px;
+    height: 740px;
+    display: inline-block;
+    box-shadow: 0 0 12px 3px rgb(181, 180, 181);
+    border: 1px solid rgb(176, 174, 174);
+    border-radius: 7px;
+}
+
+
+.LocationsDetails > .CardLocationDetails> .Info{  
+    font-family: 'Source Serif Pro', serif;
+    font-size:x-large;  
+    text-align:left;
+    padding: 6px;
+    margin: 5px;
+}
+
+.LocationsDetails >.CardLocationDetails >.Info > .TheInfo{ 
+    text-align:left;
+    padding: 5px;
+    font-size:large;    
+}
+
+.LocationsDetails > .CardLocationDetails> .Price{
+    font-family: 'Source Serif Pro', serif;
+    text-align:left;
+    font-size:x-large;
+    padding: 6px;
+    margin: 5px;  
+}
+
+.LocationsDetails>.CardLocationDetails>.Price >.ThePrice{
+    font-size:large;
+    text-align:right;  
+}
+
+.LocationsDetails >.CardLocationDetails> .Dates{
+    font-size:x-large;
+    text-align:left; 
+    padding: 6px;
+    margin: 5px;
+}
+
+.LocationsDetails >.CardLocationDetails >.Dates> .TheDate{
+    font-family: 'Source Serif Pro', serif;
+    font-size:large;  
+    margin: 30px;
+}
+
+
+
+.LocationsDetails> .CardLocationDetails>.container {
+    position: relative;
+	width: 100%;
+    box-sizing: border-box;
+}
+.LocationsDetails> .CardLocationDetails>.container img {
+    width: 648px;
+    height:386px;
+    box-sizing: border-box;
+    
+}
+.BackButtonContainer{
+    box-sizing: border-box;
+    position: absolute;
+	padding:0;
+	bottom: 380px;
+	left: 0px;
+}
+
+.EditButtonContainer{ 
+    box-sizing: border-box;
+    position: absolute;
+	padding:0;
+	bottom: 380px;
+	left: 60px;
+}
+
+
+.DeleteButtonContainer{ 
+    box-sizing: border-box;
+    position: absolute;
+	padding:0;
+	bottom: 380px;
+	left: 120px;
+}

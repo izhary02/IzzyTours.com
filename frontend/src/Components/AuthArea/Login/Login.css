@@ -1,0 +1,30 @@
+.Login {
+    width: 350px;
+    margin: 10px;
+    padding: 10px;   
+}
+.FirstBox{
+    display: inline-block;
+    text-align: left;
+}
+
+.Login > h2 {
+    font: 1.5em sans-serif;
+    font-weight: inherit;
+    text-align: center;
+}
+
+.Login span {
+    color: rgb(245, 78, 78);
+}
+
+.Login .Textfield{
+    width: 100%;
+    margin: 17px 0;
+}
+.Login .ButtonField{
+    display: block;
+    width: 50%;
+    margin:0 auto;
+}
+

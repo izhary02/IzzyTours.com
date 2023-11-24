@@ -1,0 +1,38 @@
+.EditLocation > form{
+    width: 450px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.EditLocation >h2{
+    text-align: center;
+}
+
+
+.EditLocation span{
+    color: rgb(176, 69, 105);
+
+}
+
+.EditLocation img{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    transform: translate(90px,-15px);
+    border: 1px solid black;
+}
+
+.EditLocation .Textfield{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.EditLocation .ButtonField{
+    padding: 10px;
+    margin: 3px 0;
+    margin-left: 45%;
+    margin-bottom: 7px;
+    
+}
+
+
