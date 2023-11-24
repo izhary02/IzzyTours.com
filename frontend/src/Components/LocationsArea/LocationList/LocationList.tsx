@@ -33,11 +33,13 @@ function LocationList(): JSX.Element {
         setUser(getUserInfo);
         locationsService.getAllLocations(userId)
         .then(locations => setLocations(locations))
-        .catch(err =>  notifyService.error(err));
-      
+        // .catch(err =>  notifyService.error(err));
+        .catch(err =>  console.log("locationsService",err));
+        
         followerService.getAmountOfTheSameLocationWithoutId()
         .then(follower=>setFollowers(follower))
-        .catch(err =>  notifyService.error(err)); 
+        .catch(err =>  console.log("followerService",err));
+        // .catch(err =>  notifyService.error(err)); 
         
         
         const unsubscribe = store.subscribe(() => {

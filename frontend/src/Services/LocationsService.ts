@@ -3,7 +3,7 @@ import LocationsModel from "../Models/LocationModel";
 import store from "../Redux/Store";
 import config from "../Utils/Config";
 import dayjs from 'dayjs'
-import { fetchLocationsAction, addLocationAction, updateLocationAction, deleteLocationAction, fetchAllLocationsFollowerAction } from "../Redux/LocationsState";
+import { fetchLocationsAction, updateLocationAction, deleteLocationAction, fetchAllLocationsFollowerAction, logoutLocationsAction } from "../Redux/LocationsState";
 
 class LocationsService {
 
@@ -51,7 +51,6 @@ class LocationsService {
       
         const response = await axios.post<LocationsModel>(config.locationsUrl, formData);
         const addedLocation = response.data;          
-        // store.dispatch(addLocationAction(addedLocation));
     }
 
    
@@ -76,7 +75,10 @@ class LocationsService {
         store.dispatch(deleteLocationAction(id));
     }
     
-
+    public async logout():Promise<void> {      
+        await store.dispatch(logoutLocationsAction());
+        console.log("You have been successfully logged-out. from locations");
+    }
 
 }
 

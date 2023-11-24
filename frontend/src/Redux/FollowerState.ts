@@ -18,11 +18,12 @@ export enum FollowersActionType {
     AddUserFollower = "AddUserFollower",
     DeleteFollower = "DeleteFollower",
     LocationsFollowers = "LocationsFollowers",
+    Logout = "Logout",
 }
 
 export interface FollowersAction {
     type: FollowersActionType;
-    payload: any;
+    payload?: any;
 }
 
 
@@ -65,6 +66,10 @@ export function deleteFollowerAction(follower: FollowerModel): FollowersAction {
     return action;
 }
 
+export function logoutFollowerAction(): FollowersAction{
+    const action: FollowersAction ={type:FollowersActionType.Logout};
+    return action;
+}
 
 export function followersReducer(currentState: FollowerState = new FollowerState(), action: FollowersAction): FollowerState {
     const newState = { ...currentState};
@@ -106,6 +111,16 @@ export function followersReducer(currentState: FollowerState = new FollowerState
         if(indexToDeleteUser >= 0) {
             newState.userFollower.splice(indexToDeleteUser, 1)      
         }
+        break;
+   
+   
+        case FollowersActionType.Logout:
+            newState.allFollowers = [];
+            newState.allUsersFollowers = [];
+            newState.locationsFollowers = [];
+            newState.userFollower = [];
+
+        break;
     }
     return newState
 }

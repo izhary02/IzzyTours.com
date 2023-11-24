@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../Redux/Store";
 import config from "../Utils/Config";
 import UserModel from "../Models/UserModel";
-import { addUserAction, deleteUserAction, fetchUsersAction, updateUserAction } from "../Redux/UserState";
+import { addUserAction, deleteUserAction, fetchUsersAction, logoutUserAction, updateUserAction } from "../Redux/UserState";
 import Role from "../Models/RoleModel";
 
 class UserService {
@@ -70,7 +70,10 @@ class UserService {
         store.dispatch(deleteUserAction(id));
     }
 
-    
+    public async logout():Promise<void> {      
+        await store.dispatch(logoutUserAction());
+        console.log("You have been successfully logged-out. from User");
+    }
 
 }
 

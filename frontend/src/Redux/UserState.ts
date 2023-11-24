@@ -10,11 +10,12 @@ export enum UsersActionType {
     AddUser = "AddUser",
     UpdateUser = "UpdateUser",
     DeleteUser = "DeleteUser",
+    Logout = "Logout",
 }
 
 export interface UsersAction {
     type: UsersActionType;
-    payload: any;
+    payload?: any;
 }
 
 
@@ -35,6 +36,10 @@ export function deleteUserAction(id: number): UsersAction {
     return action;
 }
 
+export function logoutUserAction(): UsersAction{
+    const action: UsersAction ={type:UsersActionType.Logout};
+    return action;
+}
 
 export function usersReducer(currentState: UserState = new UserState(), action: UsersAction): UserState {
     const newState = { ...currentState };
@@ -61,6 +66,10 @@ export function usersReducer(currentState: UserState = new UserState(), action: 
     if(indexToDelete >= 0) {
         newState.users.splice(indexToDelete, 1);
     }
+    break;
+
+    case UsersActionType.Logout:
+        newState.users = [];
     break;
 }
 return newState

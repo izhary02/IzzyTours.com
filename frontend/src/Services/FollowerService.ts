@@ -2,7 +2,7 @@ import axios from "axios";
 import store from "../Redux/Store";
 import config from "../Utils/Config";
 import FollowerModel from "../Models/FollowerModel";
-import {fetchAllUserFollowerAction, fetchAllUsersFollowersAction, fetchAllFollowersAction, fetchLocationsFollowersAction } from "../Redux/FollowerState";
+import {fetchAllUserFollowerAction, fetchAllUsersFollowersAction, fetchAllFollowersAction, fetchLocationsFollowersAction, logoutFollowerAction } from "../Redux/FollowerState";
 import UserModel from "../Models/UserModel";
 import LocationsModel from "../Models/LocationModel";
 
@@ -98,6 +98,11 @@ class FollowerService {
         };
         return amountOfEachLocation
 
+    }
+
+    public async logout():Promise<void> {      
+        await store.dispatch(logoutFollowerAction());
+        console.log("You have been successfully logged-out. from Follower");
     }
 }
 

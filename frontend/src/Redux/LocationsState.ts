@@ -2,7 +2,7 @@ import LocationsModel from "../Models/LocationModel";
 
 export class LocationsState {
     public locations: LocationsModel[] = [];
-    public locationsFollow: LocationsModel[] =[];
+    public locationsFollow: LocationsModel[] = [];
 }
 
 
@@ -42,7 +42,7 @@ export function deleteLocationAction(id: number): LocationsAction {
     return action;
 }
 
-export function logoutAction(): LocationsAction{
+export function logoutLocationsAction(): LocationsAction{
     const action: LocationsAction ={type:LocationsActionType.Logout};
     return action;
 }
@@ -78,8 +78,8 @@ export function locationsReducer(currentState = new LocationsState(), action: Lo
             }
         break;
         case LocationsActionType.Logout:
-            newState.locations = null;
-            newState.locationsFollow = null;
+            newState.locations = [];
+            newState.locationsFollow = [];
         break;
    
   

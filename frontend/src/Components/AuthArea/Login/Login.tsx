@@ -22,6 +22,8 @@ function Login(): JSX.Element {
         }
         catch(err: any){
            notifyService.error(err);
+           console.log(err);
+           
         }
    }
     return (
