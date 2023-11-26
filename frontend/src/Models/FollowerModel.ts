@@ -1,5 +1,5 @@
 class FollowerModel{
-    public userId : number;
-    public locationId: number;
-}
+  public userId : number;
+  public locationId: number;
+};
 export default FollowerModel;

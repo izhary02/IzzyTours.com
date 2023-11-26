@@ -1,24 +1,23 @@
-import reportWebVitals from './reportWebVitals';
+import './index.css';
 import interceptorService from './Services/InterceptorService';
 import Layout from './Components/LayoutArea/Layout/Layout';
-import './index.css';
-import ReactDOM from 'react-dom/client';
+import reportWebVitals from './reportWebVitals';
 import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-  interceptorService.createInterceptors();
-
-
+interceptorService.createInterceptors();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
   <BrowserRouter>
- <Layout/>
- </BrowserRouter>
-</React.StrictMode>
+  <Layout/>
+  </BrowserRouter>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

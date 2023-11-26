@@ -1,27 +1,32 @@
 .Layout {
-    height: 100%;
-    box-sizing: border-box;
+  height: 100%;
+  box-sizing: border-box;
 }
+
 .Layout > .Userdiv {
   min-height: 100%;
-    display: grid;
-    grid-template-rows: 10% 85% 5%;
+  display: grid;
+  grid-template-rows: 10% 85% 5%;
 }
+
 .Layout > .Admindiv {
  min-height: 100%;
-    display: grid;
-    grid-template-rows: 7% 4% 85% 4%;
+  display: grid;
+  grid-template-rows: 7% 4% 85% 4%;
 }
+
 .Layout > .Nandiv {
-    height: 100%;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-rows: 10% 85% 5%;
+  height: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 10% 85% 5%;
 }
+
 .Layout > .Userdiv > header{
   border-bottom: 2px solid rgb(8,1,1);
   margin: 4px;
 }
+
 .Layout > .Userdiv > footer{
   border-top: 2px solid rgb(8, 1, 1);
 }
@@ -30,16 +35,20 @@
   border-bottom: 2px solid rgb(8,1,1);
   margin: 4px;
 }
+
 .Layout > .Admindiv > footer{
   border-top: 2px solid rgb(8, 1, 1);
 }
+
 .Layout > .Nandiv > header{
   border-bottom: 2px solid rgb(8,1,1);
   margin: 4px;
 }
+
 .Layout > .Nandiv > footer{
   border-top: 2px solid rgb(8, 1, 1);
 }
- .active{
-   color:rgb(224, 100, 6);
- } 
+
+.active{
+  color:rgb(224, 100, 6);
+} 

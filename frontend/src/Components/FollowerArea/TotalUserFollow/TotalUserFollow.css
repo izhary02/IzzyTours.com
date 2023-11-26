@@ -1,11 +1,12 @@
 .TotalUserFollow{
-    position: absolute;
-    font-family: "Gill Sans", sans-serif;
-    font-style: italic;
-    font-size: 25px;
-    top: 65px;
-    left: 43px;
+  position: absolute;
+  font-family: "Gill Sans", sans-serif;
+  font-style: italic;
+  font-size: 25px;
+  top: 65px;
+  left: 43px;
 }
+
 .TotalUserFollow > span{
-    color: #000000;;
-    }
+  color: #000000;;
+}

@@ -18,7 +18,6 @@ import expressRateLimit from "express-rate-limit";
 import { request } from "http";
 import userController from "./6-controllers/user-controller";
 
-
 const expressServer = express();
 expressServer.use("/api/",expressRateLimit({
   windowMs:1000,
@@ -42,35 +41,31 @@ expressServer.use(expressFileUpload());
 expressServer.use(sanitize);
  // if (config.isDevelopment) expressServer.use(cors());
  // expressServer.use(cors({origin:["http://localhost:3000","http://localhost:3001"]}));
-
- expressServer.use(logRequest);
- expressServer.use(preventGarbage);
- 
-
-
- 
- expressServer.use("/api",authController);
- expressServer.use("/api", locationsController);
- expressServer.use("/api", followerController);
- expressServer.use("/api", userController);
- expressServer.use("/api", controller);
- 
- expressServer.use(express.static(path.join(__dirname,"./7-frontend")))
- 
- expressServer.use("*", (request: Request, response: Response, next: NextFunction) => {
-   if(config.isDevelopment){
-     const err = new RouteNotFoundError(request.method,request.originalUrl);
-     next(err);
-    }
-    else{
-      response.sendFile(path.join(__dirname,"./7-frontend/index.html"));
-    }
-  });
+expressServer.use(logRequest);
+expressServer.use(preventGarbage);
   
-  expressServer.use(catchAll);
+expressServer.use("/api",authController);
+expressServer.use("/api", locationsController);
+expressServer.use("/api", followerController);
+expressServer.use("/api", userController);
+expressServer.use("/api", controller);
+ 
+expressServer.use(express.static(path.join(__dirname,"./7-frontend")))
+ 
+expressServer.use("*", (request: Request, response: Response, next: NextFunction) => {
+  if(config.isDevelopment){
+    const err = new RouteNotFoundError(request.method,request.originalUrl);
+    next(err);
+  }
+  else{
+    response.sendFile(path.join(__dirname,"./7-frontend/index.html"));
+  }
+});
   
-  // const httpServer = expressServer.listen(3001, () => console.log("Listening..."));
- const httpServer = expressServer.listen(config.port, () => console.log("Listening..."));
-  socketLogic.init(httpServer)
+expressServer.use(catchAll);
+  
+// const httpServer = expressServer.listen(3001, () => console.log("Listening..."));
+const httpServer = expressServer.listen(config.port, () => console.log("Listening..."));
+socketLogic.init(httpServer)
 
 

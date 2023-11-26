@@ -8,29 +8,28 @@ import followerService from "../../../Services/FollowerService";
 import userService from "../../../Services/UserService";
 
 function Logout(): JSX.Element {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
     
-    useEffect(()=>{
-        async function out():Promise<void> {  
-            try{
-                navigate("/login");
-                authService.logout();
-                socketService.disconnect();
-                locationsService.logout();
-                followerService.logout();
-                userService.logout();
-
-            }
-            catch(err:any){
-                notifyService.error(err);
-            }
+  useEffect(()=>{
+     async function out():Promise<void> {  
+       try{
+         navigate("/login");
+         authService.logout();
+         socketService.disconnect();
+         locationsService.logout();
+         followerService.logout();
+         userService.logout();
         }
-     if(authService.isLoggedIn()){
-        out()
-     }
-    },[]);
+        catch(err:any){
+          notifyService.error(err);
+        }
+    }
+    if(authService.isLoggedIn()){
+      out()
+    }
+  },[]);
 
-    return null;
+  return null;
 }
 
 export default Logout;

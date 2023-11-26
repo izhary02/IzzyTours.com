@@ -5,10 +5,8 @@ import locationsService from "../../../Services/LocationsService";
 import interceptorService from "../../../Services/InterceptorService";
 import FollowerModel from "../../../Models/FollowerModel";
 import store from "../../../Redux/Store";
-import Role from "../../../Models/RoleModel";
 import notifyService from "../../../Services/NotifyService";
 import followerService from "../../../Services/FollowerService";
-import Carousel from "../../LocationsArea/Carousel/Carousel";
 import Loading from "../../SharedArea/Loading/Loading";
 
 
@@ -76,7 +74,6 @@ useEffect(() => {
                     onMouseLeave={()=>{setAutoPlay(true);}}
                     >
                 <div className="CarouselWrapper">
-                 {locations.map((l,index) => <Carousel key={l.locationId} locations={l} index={index} current={current}/>)}
                 <div className="CarouselArrowLeft" onClick={SlideLeft}>&lsaquo;</div>
                 <div className="CarouselArrowRight" onClick={SlideRight}>&rsaquo;</div>
                 <div className="CarouselPagination">

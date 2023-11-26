@@ -1,10 +1,11 @@
 .AuthMenu {
-	position: absolute;
-    font-family: "Gill Sans", sans-serif;
-    font-size: 17px;
-    top: 25px;
-    right: 43px;
+  position: absolute;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 17px;
+  top: 25px;
+  right: 43px;
 }
+
 .AuthMenu > span{
-color: #000000;;
+  color: #000000;;
 }

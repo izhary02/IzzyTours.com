@@ -1,31 +1,29 @@
-
 .AddLocation > form{
-    width: 450px;
-    margin: 20px;
-    padding: 20px;
+  width: 450px;
+  margin: 20px;
+  padding: 20px;
 }
 
 .AddLocation >h2{
-    text-align: center;
+  text-align: center;
 }
 
 .AddLocation span{
-    color: rgb(176, 69, 105);
-
+  color: rgb(176, 69, 105);
 }
 
 .AddLocation .Textfield{
-    width: 100%;
-    margin: 5px 0;
+  width: 100%;
+  margin: 5px 0;
 }
 
 .AddLocation .ButtonField{
-    width: 100%;
-    margin: 5px 0;
-    margin-bottom: 50px;
-    color: aquamarine;
+  width: 100%;
+  margin: 5px 0;
+  margin-bottom: 50px;
+  color: aquamarine;
 }
 
 .AddLocation > .AddColor  span{
-    color: rgb(247, 244, 245);
+  color: rgb(247, 244, 245);
 }

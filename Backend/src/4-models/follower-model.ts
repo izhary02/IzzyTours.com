@@ -1,29 +1,23 @@
 import Joi from "joi";
-import LocationModel from "./location-model";
-import UserModel from "./user-model";
 
 class FollowerModel{
-    userId:number;
-    locationId: number 
+  userId:number;
+  locationId: number 
 
-    public constructor(follower:FollowerModel){
-        this.userId = follower.userId,
-        this.locationId = follower.locationId
-    }
+  public constructor(follower:FollowerModel){
+    this.userId = follower.userId,
+    this.locationId = follower.locationId
+  }
 
-    private static postFollowerValidationSchema = Joi.object({
-        userId: Joi.number().required(),
-        locationId: Joi.number().required(),
-    });
+  private static postFollowerValidationSchema = Joi.object({
+    userId: Joi.number().required(),
+    locationId: Joi.number().required(),
+  });
 
-    public validatePostFollower(): string {
-        const result = FollowerModel.postFollowerValidationSchema.validate(this)
-        return result.error?.message;
-    }
-
+  public validatePostFollower(): string {
+    const result = FollowerModel.postFollowerValidationSchema.validate(this)
+    return result.error?.message;
+  }
 }
-
-
-
 
 export default FollowerModel

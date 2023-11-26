@@ -1,20 +1,19 @@
+import "./LocationsDetails.css";
+import Role from "../../../Models/RoleModel";
 import LocationsModel from "../../../Models/LocationModel";
 import LocationsService from "../../../Services/LocationsService";
+import notifyService from "../../../Services/NotifyService";
 import config from "../../../Utils/Config";
 import Loading from "../../SharedArea/Loading/Loading";
-import { useEffect, useState } from "react";
-import {useNavigate, useParams } from "react-router-dom";
+import store from "../../../Redux/Store";
 import dayjs from 'dayjs'
-import "./LocationsDetails.css";
-import notifyService from "../../../Services/NotifyService";
-import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import React from "react";
-import store from "../../../Redux/Store";
-import Role from "../../../Models/RoleModel";
 import ReplyIcon from '@mui/icons-material/Reply';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useEffect, useState } from "react";
+import {useNavigate, useParams } from "react-router-dom";
 
 function LocationsDetails(): JSX.Element {
   const [role, setRole] = useState<boolean>();
