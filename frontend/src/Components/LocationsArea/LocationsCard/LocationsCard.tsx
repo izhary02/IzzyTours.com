@@ -1,5 +1,4 @@
 import "./LocationsCard.css";
-import Role from "../../../Models/RoleModel";
 import FollowerModel from "../../../Models/FollowerModel";
 import LocationsModel from "../../../Models/LocationModel";
 import FollowerService from "../../../Services/FollowerService";
@@ -13,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { Checkbox} from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import AmountOfFollower from "../../FollowerArea/AmountOfFollower/AmountOfFollower";
+import authService from "../../../Services/AuthService";
 
 
 interface LocationCardProps {
@@ -21,22 +21,19 @@ interface LocationCardProps {
 const NoOfCharac = 30
 
 function LocationsCard(props: LocationCardProps):JSX.Element{
-  const [role, setRole] = useState<boolean>();
+
   const infoContent = props.location.locationsInfo
   const getUserInfo = store.getState().authState.user;
   const displayText = infoContent.slice(0,NoOfCharac) + "...";
   const locationInfo = props.location
-  const [follower, setFollower] = useState<FollowerModel[]>([]);
+  const [, setFollower] = useState<FollowerModel[]>([]);
   const [icon, setIcon] = useState<boolean>(false);
   const [checked, setChecked] = React.useState({icon});
-   
-  useEffect(()=>{
-     const takeTheRole = getUserInfo.role
-     const isAdmin = takeTheRole === Role.Admin
-     setRole(isAdmin)
-  },[]);
+  const isAdmin = authService.heHasAAdmin()
 
- 
+  
+        
+
   useEffect(() => {
     followerService.getAllFollowerOfOneUser(getUserInfo)
     .then(followers => {setFollower(followers)
@@ -49,7 +46,7 @@ function LocationsCard(props: LocationCardProps):JSX.Element{
       setFollower(dupUserFollower)
     });
     return()=> unsubscribe();
-  },[]);
+  },[getUserInfo,locationInfo]);
       
   async function handleChange (event: React.ChangeEvent<HTMLInputElement>):Promise<void>{   
     const userId = getUserInfo.userId ;
@@ -81,7 +78,7 @@ function LocationsCard(props: LocationCardProps):JSX.Element{
   return (
     <div className="LocationsCard Box">
       <div>
-        {!role && (    
+        {!isAdmin && (    
           <div className="followButton">
             <Checkbox icon={<FavoriteBorder />}  checked={icon} onChange={handleChange} checkedIcon={<Favorite color="error" />} 
               inputProps={{ 'aria-label': 'controlled' }}/>
@@ -90,7 +87,7 @@ function LocationsCard(props: LocationCardProps):JSX.Element{
         <NavLink to={"/locations/Details/" + props.location.locationId}>
           <div className="Container">
             <div>
-              <img src={config.locationImagesUrl + props.location.imageName} />
+              <img src={config.locationImagesUrl + props.location.imageName} alt={props.location.imageName} />
             </div>
             <span className="Country">{props.location.locationName} </span>
 

@@ -24,7 +24,7 @@ function AmountOfFollower(props:AmountOfFollowerProps): JSX.Element {
     return () => {
       unsubscribe();
     }
-  },[]);
+  },[LocationId]);
     
   return (
     <div className="AmountOfFollower">

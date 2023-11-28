@@ -1,11 +1,9 @@
 import "./LocationsDetails.css";
-import Role from "../../../Models/RoleModel";
 import LocationsModel from "../../../Models/LocationModel";
 import LocationsService from "../../../Services/LocationsService";
 import notifyService from "../../../Services/NotifyService";
 import config from "../../../Utils/Config";
 import Loading from "../../SharedArea/Loading/Loading";
-import store from "../../../Redux/Store";
 import dayjs from 'dayjs'
 import Link from '@mui/material/Link';
 import EditIcon from '@mui/icons-material/Edit';
@@ -14,34 +12,22 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from "react";
 import {useNavigate, useParams } from "react-router-dom";
+import authService from "../../../Services/AuthService";
 
 function LocationsDetails(): JSX.Element {
-  const [role, setRole] = useState<boolean>();
-  const [buttonForRole, setButtonForRole] = useState<string>();
-  const isAdmin = store.getState().authState.isAdmin;
+
   const params = useParams();
   const navigate = useNavigate();
   const [location, setLocation] = useState<LocationsModel>();
-  const getUserInfo = store.getState().authState.user;
+  const isAdmin = authService.heHasAAdmin()
 
-
-  useEffect(()=>{
-   const takeTheRole = getUserInfo.role
-   const isAdmin = takeTheRole === Role.Admin
-   setRole(isAdmin)  
-  },[]);
  
   useEffect(()=>{
    const id: number = +params.locationId;
    LocationsService.getOneLocation(id)
    .then(locations => setLocation(locations))
    .catch(err =>  notifyService.error(err));
-  }, []);
-
-  useEffect(()=>{
-   role === false ? setButtonForRole("BackButtonContainer"):
-   setButtonForRole("BackButtonContainerRole")
-  })
+  }, [params.locationId]);
 
 
  function handleBack(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -78,7 +64,7 @@ function LocationsDetails(): JSX.Element {
      <span >{location.locationName}</span> 
  
     <div className="container" >
-     <img src={config.locationImagesUrl + location.imageName} />
+     <img src={config.locationImagesUrl + location.imageName} alt={location.imageName} />
      <Breadcrumbs aria-label="breadcrumb"  onClick={handleBack} className="BackButtonContainer">
       <Link
        underline="none"
@@ -89,7 +75,7 @@ function LocationsDetails(): JSX.Element {
       </Link>
      </Breadcrumbs>
          
-    {role &&<>
+    {isAdmin &&<>
      <div className="EditButtonContainer">
       <Breadcrumbs aria-label="breadcrumb"  onClick={handleEdit}>
        <Link

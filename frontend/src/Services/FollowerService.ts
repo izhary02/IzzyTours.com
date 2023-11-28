@@ -44,11 +44,11 @@ class FollowerService {
     }
     return followers
   }
-
+  
   public async triggerFollower(follower: FollowerModel, isDeleted: Boolean):Promise<void> {
     await axios.post<FollowerModel>(config.followersUrl,{...follower,isDeleted});   
   }
-
+  
   public async isHeFollow(followers:FollowerModel[],location:LocationsModel):Promise<boolean>{
     const heFollow = await followers.find(f => f.locationId === location.locationId);
     if (heFollow) {
@@ -58,6 +58,7 @@ class FollowerService {
       return false
     }
   }
+  
 
   public async getAmountOfTheSameLocation(userId:number):Promise<number>{
     const followers = store.getState().followersState.locationsFollowers;
@@ -91,7 +92,7 @@ class FollowerService {
       allTheFollows.push (amountOfEachLocation.userId);
     });
     const sumTheFollowers = allTheFollows.reduce((accumulator,currentValue) => accumulator + currentValue,amountOfFollowerOfAllLocations);
-    if (allTheLocations.length == sumTheFollowers){}
+    if (allTheLocations.length === sumTheFollowers){}
     else {
       await this.getAllUsersFollowersNow();
     }

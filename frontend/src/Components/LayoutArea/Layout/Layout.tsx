@@ -18,6 +18,7 @@ import RoutingForUnknownUsers from "../Routing/RoutingForUnknownUsers";
 function Layout(): JSX.Element {
   const [role, setRole] = useState<boolean>(false);
   const [user, setUser] = useState<UserModel>();
+  
   window.onunload = () => {
     window.localStorage.clear()
     authService.logout();

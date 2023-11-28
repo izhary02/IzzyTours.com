@@ -17,6 +17,8 @@ class NotifyService {
     if (typeof err.message === "string") return err.message;
     return "Some error, please try again.";
   }
+
+  
 }
 
 const notifyService = new NotifyService();

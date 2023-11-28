@@ -10,6 +10,7 @@ import {PhotoCamera,Send} from '@mui/icons-material';
 import {TextField, Button, InputAdornment, IconButton} from '@mui/material'
 
 
+
 function AddLocation(): JSX.Element {
   const navigate = useNavigate();
   const { register, handleSubmit, formState } = useForm<LocationsModel>();

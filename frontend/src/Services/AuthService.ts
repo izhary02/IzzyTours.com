@@ -28,6 +28,9 @@ class AuthService{
   public isLoggedIn(): boolean{
     return store.getState().authState.user !==null
   }
+  public heHasAAdmin(): boolean{
+    return store.getState().authState.user.role  === "Admin"
+  }
 };
 
 const authService = new AuthService();

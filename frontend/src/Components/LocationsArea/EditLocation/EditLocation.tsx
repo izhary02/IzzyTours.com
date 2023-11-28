@@ -97,7 +97,8 @@ function EditLocation(): JSX.Element {
         <br/>
         <Button type="submit"  variant="outlined" color="primary" className='UpdateButtonField' fullWidth endIcon={<Send color="primary"/>}>
           Update
-        </Button>           
+        </Button>
+            
       </form>
     </div>
   );
