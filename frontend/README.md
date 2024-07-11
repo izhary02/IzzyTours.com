@@ -15,22 +15,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 #### Admin:
 
-Username : izzy-yefet
-Password : 1212
+Username : izzy-yefet,
+Password : 1212,
 
-#### Users:
+#### Users :
 
-Username : mimim
-Password : 1212
+Username : mimim,
+Password : 1212,
 
-Username : roiboy
-Password : 1020
+Username : roiboy,
+Password : 1020,
 
-Username : boryo
-Password : 1020
+Username : boryo,
+Password : 1020,
 
-Username : cedric grolet
-Password : 1010
+Username : cedric grolet,
+Password : 1010,
 
-Username : many-mamtera
-Password : 1010
+Username : many-mamtera,
+Password : 1010,
